@@ -64,19 +64,18 @@ async def filter(bot, update):
         
         await message.edit_text(
             text=f"Error :- `{error}`",
-            quote=True,
             disable_web_page_preview=True
         )
         return
     
     text = f"**File Name:** `{response['fileName']}`" + "\n"
     text += f"**Download Page:** `{response['downloadPage']}`" + "\n"
-    text += f"**Direct Download Link:** `{response['directLink']}`" + "\n"
+    text += f"**Direct Download Link:** `{response['directLink'] + '/' + response['fileName']}`" + "\n"
     reply_markup = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton(text="Open Link", url=response['directLink']),
-                InlineKeyboardButton(text="Share Link", url=f"https://telegram.me/share/url?url={response['directLink']}")
+                InlineKeyboardButton(text="Open Link", url=response['downloadPage']),
+                InlineKeyboardButton(text="Share Link", url=f"https://telegram.me/share/url?url={response['downloadPage']}")
             ],
             [
                 InlineKeyboardButton(text="Join Updates Channel", url="https://telegram.me/FayasNoushad")
