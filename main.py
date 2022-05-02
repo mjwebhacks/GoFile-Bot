@@ -7,9 +7,9 @@ from gofile import uploadFile
 
 Bot = Client(
     "GoFile-Bot",
-    bot_token = os.environ["BOT_TOKEN"],
-    api_id = int(os.environ["API_ID"]),
-    api_hash = os.environ["API_HASH"]
+    bot_token = "5351904746:AAFDQGas2SZButIQ4Dost0c0OYOOoNP5SAM",
+    api_id = 3796974,
+    api_hash = "9511d0112631f9990337eb724d1a7d0d"
 )
 
 
